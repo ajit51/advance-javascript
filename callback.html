@@ -1,9 +1,10 @@
 <script>
 	
-const funA = () => {
+/*const funA = () => {
 
 	setTimeout(function(){
 		console.log(`Welcome to FunA`);
+		funB();
 	}, 3000);
 }
 
@@ -11,7 +12,19 @@ const funB = () => {
 	console.log(`Welcome to FunB`);
 }
 
-funA();
-funB();
+funA();*/
+
+//call back method
+const perOne = (friend, callFriend) => {
+	console.log(`I am busy right now. I am talking to ${friend}. I will call you back.`);
+	callFriend();
+}
+
+const perTwo = () => {
+	console.log(`Hey what's up. I call back you dekha.`);
+}
+
+perOne('Thapa', perTwo);
+
 
 </script>

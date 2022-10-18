@@ -1,0 +1,25 @@
+<script>
+	
+
+const bioData = {
+	name : "Vinod",
+	age : 26,
+	deg : 'MCS',
+	hobby : {
+		first : "Playing",
+		sec : "Youtube Videos"
+	}
+};
+
+console.log(`my name is ${bioData.name}`)
+
+//let{name, age, deg} = bioData;
+//console.log(`My name is ${name} age is ${age} and degree is ${deg}`)
+
+//let{name:myName, age, deg} = bioData;
+//console.log(`My name is ${myName} age is ${age} and degree is ${deg}`)
+
+let{name:myName, age, deg, hobby} = bioData;
+console.log(`My name is ${myName} age is ${age} and degree is ${deg} and my hobby ${hobby.sec}`)
+
+</script>

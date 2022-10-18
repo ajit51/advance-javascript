@@ -1,0 +1,35 @@
+<script>
+	
+
+/*function sun(a, b, c, d) {
+	console.log(a+b+c+d)
+}	
+
+sun(1, 2, 3, 4, 5)*/
+
+
+function sun(... inputs) {
+	console.log(inputs)
+	let total = 0;
+	for(let i of inputs){
+		total += i;
+	}
+	console.log(total)
+}	
+sun(1, 2, 3, 4, 5)
+
+
+
+function fun(a, b, ... c) {
+	console.log(`${a} ${b}`)
+	console.log(c)
+	console.log(c[0])
+	console.log(c.length)
+	console.log(c.indexOf('Edan'))
+}
+
+fun('Ronaldo', 'Neymar', 'Pele', 'Messi', 'Edan')
+
+
+
+</script>

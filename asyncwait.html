@@ -1,0 +1,71 @@
+<script>
+	
+/*
+Async/await
+
+There's a special syntax to work with promises in a more comfortable fashion, called "async/await". It's surprisingly easy to understand and use.
+
+The word "async" before a function means one simple thing: a function always return a promise.
+
+so the async keyword is added to function to tell them to return a promise rather than directly returning a value.
+
+We can use await when calling any function that returns a promise, including web API functions.
+
+The keyword await makes javascript wait untill that promise settles and returns its result.
+
+*/
+
+
+//API
+//1: 2s student roll nor
+//2: 2s 2nd name and age
+
+
+//executor
+//promise produce
+const pobj1 = new Promise( (resolve, reject) => {
+	setTimeout( () => {
+		let roll_no = [1, 2, 3, 4, 5];
+		resolve(roll_no);
+		//reject('Error while communicating');
+	}, 2000);
+});
+
+const getBiodata = (indexdata) => {
+	return new Promise( (resolve, reject) => {
+		setTimeout( (data) => {
+			let bioData = {
+				name : "Vinod",
+				age : 26
+			}
+			resolve(`My roll no is ${data}. My name is ${bioData.name} and I am ${bioData.age} years ols.`)
+		}, 2000, indexdata);
+	})
+}
+
+//promise consume
+/*pobj1.then( (rollno) => {
+	console.log(rollno);
+	return getBiodata(rollno[1]);
+}).then( (kuchhbhi) => {
+		console.log(kuchhbhi)
+}).catch( (error) => {
+	console.log(error);
+})*/
+
+async function getData(){
+	const rollNoData = await pobj1;
+	console.log(rollNoData);
+
+	const bioDatas = await getBiodata(rollNoData[1]);
+	console.log(bioDatas);
+
+	return bioDatas;
+}
+
+const getName = getData().then( (myName) => {
+	console.log(myName);
+})
+
+
+</script>
